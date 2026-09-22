@@ -1,6 +1,6 @@
 import streamlit as st
 
-
+# results toast comes above the input fields
 def hi_click():
     if name:
         st.success(f"Hello, {name}", icon="👍")
@@ -8,7 +8,7 @@ def hi_click():
         st.error(f"I can't say hello, if you don't tell me your name!", icon="💣")
 
 
-def clear_click():
+def clear_click(): # doesn't work
     name = None 
 
 # setup

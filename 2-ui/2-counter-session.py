@@ -3,7 +3,7 @@ import streamlit as st
 # Streamlit is always running, so only do this when count is not in session_state
 
 # initialize
-if 'count' not in st.session_state:
+if 'count' not in st.session_state: # if the session doesn't have session value
     st.session_state.count = 0
 
 # widget setup
@@ -16,7 +16,7 @@ reset_clicked = st.button('reset counter', type='secondary')
 # interactions
 if reset_clicked:
     st.session_state.count = 0
-elif incr_clicked:
+elif incr_clicked: # need to update session state
     st.session_state.count = st.session_state.count + 1
     
 # display session state, after interations

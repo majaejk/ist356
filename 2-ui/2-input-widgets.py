@@ -5,9 +5,9 @@ st.title('Streamlit Input Widgets!')
 st.markdown("## Text Inputs")
 txt = st.text_input('Enter your name:', value='John Doe')
 st.text(f"OUTPUT: {txt}, type: {type(txt)}")
-pw = st.text_input('Enter your password:', type="password")
-st.text(f"OUTPUT: {pw}, type: {type(pw)}")
-txta = st.text_area('Leave a comment:', value='Type here...')
+pw = st.text_input('Enter your password:', type="password") # hides the input text
+st.text(f"OUTPUT: {pw}, type: {type(pw)}") # password will show in the output of called
+txta = st.text_area('Leave a comment:', value='Type here...') # large text block allows for entered lines
 st.text(f"OUTPUT: {txta}, type: {type(txta)}")
 st.divider()
 
@@ -19,9 +19,9 @@ st.text(f"OUTPUT: {tog}, type: {type(tog)}")
 st.divider()
 
 st.markdown("## Date / Time Widgets")
-dt =st.date_input('Select a date:')
+dt =st.date_input('Select a date:') # calendar pop-up 
 st.text(f"OUTPUT: {dt}, type: {type(dt)}")
-tm = st.time_input('Select a time:')
+tm = st.time_input('Select a time:') # can set interval, fill offer stepped (default 15 min)
 st.text(f"OUTPUT: {tm}, type: {type(tm)}")
 st.divider()
 
@@ -32,26 +32,31 @@ nums = st.slider('Pick a number between 1 and 20:', min_value=1, max_value=20, v
 st.text(f"OUTPUT: {nums}, type: {type(nums)}")
 st.divider()
 
-st.markdown("## Selection Widgets")
-selbox = st.selectbox('Choose one shipping method:', ['Jiffy Express', ' You Pee Es', 'FedUp Express'])
+st.markdown("## Selection Widgets") # all take lists to provide options
+selbox = st.selectbox('Choose one shipping method:', # dropdown single select
+                       ['Jiffy Express', ' You Pee Es', 'FedUp Express'])
 st.text(f"OUTPUT: {selbox}, type: {type(selbox)}")
-mulselbox = st.multiselect('Select all your favorite colors:', ['Red', 'Green', 'Blue', 'Yellow', 'White'])
+mulselbox = st.multiselect('Select all your favorite colors:', # dropdown multi-select
+                           ['Red', 'Green', 'Blue', 'Yellow', 'White'])
 st.text(f"OUTPUT: {mulselbox}, type: {type(mulselbox)}")
-selslider = st.select_slider('Rate us:', options=['1=Poor','2=ok','3=good','4=great','5=excellent'], value = '3=good')
+selslider = st.select_slider('Rate us:', # slider select 
+                             options=['1=Poor','2=ok','3=good','4=great','5=excellent'], value = '3=good')
 st.text(f"OUTPUT: {selslider}, type: {type(selslider)}")
-radio = st.radio('Rate us:', ['1=Poor','2=ok','3=good','4=great','5=excellent'], index=2, horizontal=True)
+radio = st.radio('Rate us:', # radio select
+                 ['1=Poor','2=ok','3=good','4=great','5=excellent'], 
+                 index=2, horizontal=True)
 st.text(f"OUTPUT: {radio}, type: {type(radio)}")
 st.divider()
 
 
 st.markdown("## 'Other' Widgets")
-feed = st.feedback('faces')
+feed = st.feedback('faces') # icons to select 0 to 4
 st.text(f"OUTPUT: {feed}, type: {type(feed)}")
-color = st.color_picker('Pick a color:', value='#00f900')
+color = st.color_picker('Pick a color:', value='#00f900') # pallette or text input for hex code
 st.text(f"OUTPUT: {color}, type: {type(color)}")
-file = st.file_uploader('Upload a file:')
+file = st.file_uploader('Upload a file:') # accepts file uploads (200 MB)
 st.text(f"OUTPUT: {file}, type: {type(file)}")
-pic = st.camera_input('Take a selfie:')
+pic = st.camera_input('Take a selfie:') # access web cam to take a photograph
 st.text(f"OUTPUT: {pic}, type: {type(pic)}")
 st.divider()
 
